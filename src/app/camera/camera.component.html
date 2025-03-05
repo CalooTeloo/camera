@@ -1,0 +1,71 @@
+<div class="camera-container">
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <app-gallery-img [images]="imageUrl"></app-gallery-img>
+</div>
+
+
+<div id="video">
+    <span class="loading-spinner">⌛</span>
+</div>
+
+<div class="camera">
+    <div class="top">
+        <div class="flash">
+            <div class="flash-lines"></div>
+            <div class="inside-flash"></div>
+            <div class="light none"></div>
+        </div>
+        <div class="on-off-button"></div>
+        <div class="lens-div">
+            <div class="lens"></div>
+            <div class="inside-lens"></div>
+        </div>
+        <div class="circle"></div>
+        <div class="view-finder">
+            <div class="reflection"></div>
+            <div class="glass"></div>
+        </div>
+        <div class="minus-plus-button">
+            <div class="minus"></div>
+            <div class="plus"></div>
+        </div>
+        <div class="brand-name">
+            <span>One</span>
+            <span>Step</span>
+            <span class="number">2</span>
+        </div>
+        <div class="click-button">
+            <div class="reflection"></div>
+            <button (click)="takePicture()" class="take-picture-button" [disabled]="loading">
+            </button>
+        </div>
+        <div class="curve"></div>
+        <div class="slide">
+            <div class="first-part"></div>
+            <div class="second-part"></div>
+            <div class="third-part"></div>
+        </div>
+        <div class="background"></div>
+    </div>
+    <div class="bottom">
+        <div class="second-part"></div>
+        <div class="colors"></div>
+        <div class="logo">Polaroid</div>
+        <div class="camera-type">I-TYPE CAMERA</div>
+    </div>
+    <div class="back-div">
+        <div class="first-part"></div>
+        <div class="second-part"></div>
+    </div>
+    <div class="polaroid">
+        <div id="shadow" class="none"></div>
+        <img class="none" />
+
+        <canvas id="canvas" class="none" width="640" height="480">
+        </canvas>
+    </div>
+
+</div>
+<div class="table"></div>

@@ -1,0 +1,8 @@
+<div class="gallery-container">
+    <div *ngFor="let image of images" class="gallery-item">
+        <img [src]="image" alt="Gallery Image" class="gallery-image">
+    </div>
+    <div *ngIf="images.length === 0" class="no-images">
+        No hay imágenes en la galería aún.
+    </div>
+</div>
