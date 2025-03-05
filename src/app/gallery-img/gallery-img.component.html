@@ -1,8 +1,19 @@
-<div class="gallery-container">
-    <div *ngFor="let image of images" class="gallery-item">
-        <img [src]="image" alt="Gallery Image" class="gallery-image">
+<div class="carousel-container">
+    <button class="carousel-arrow prev" (click)="prevSlide()">❮</button>
+    <div class="carousel-wrapper">
+        <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+            <div *ngFor="let image of images" class="carousel-item">
+                <div class="image-container">
+                    <img [src]="image" alt="Carousel Image" class="carousel-image">
+                    <!-- Botón para eliminar la imagen -->
+                    <button class="delete-button" (click)="deleteImage(image)">✖</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="images.length === 0" class="no-images">
+            No hay imágenes en el carrusel aún.
+        </div>
     </div>
-    <div *ngIf="images.length === 0" class="no-images">
-        No hay imágenes en la galería aún.
-    </div>
+    <button class="carousel-arrow next" (click)="nextSlide()">❯</button>
+    <button class="carousel-arrow prev" (click)="prevSlide()">❰</button>
 </div>

@@ -2,12 +2,10 @@
     <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
     </div>
-    <app-gallery-img [images]="imageUrl"></app-gallery-img>
 </div>
 
-
 <div id="video">
-    <span class="loading-spinner">⌛</span>
+    <span class="loading-spinner" *ngIf="loading">⏳</span>
 </div>
 
 <div class="camera">
@@ -66,6 +64,5 @@
         <canvas id="canvas" class="none" width="640" height="480">
         </canvas>
     </div>
-
 </div>
 <div class="table"></div>
